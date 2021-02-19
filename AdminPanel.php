@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(!isset($_SESSION['AdminLoginId']))
 {
 	header("location: AdminLogin.php");
@@ -59,12 +60,23 @@ ul li:hover{
 
 <div id="header">
 
-<center><img src="logoicon.png" alt="adminLogo" id="adminLogo"><br>This is Admin Panel, Please proceed with caution!
-<?php echo $_SESSION['AdminLoginId']?>
-<button>LOG OUT</button>
+<center><img src="logoicon.png" alt="adminLogo" id="adminLogo"><br>
+<h1>This is Admin Panel, Please proceed with caution! - <?php echo $_SESSION['AdminLoginId']?></h1>
+<form method="POST">
+<button name= "Logout">LOG OUT</button>
+</form>
 </center>
 
 </div>
+
+<?php
+if(isset($_POST['Logout']))
+{
+	session_destroy();
+	header("location: AdminLogin.php");
+}
+?>
+
 
 <div id="sidebar">
 <ul>
