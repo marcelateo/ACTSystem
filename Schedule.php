@@ -1,31 +1,31 @@
 <html>
 <head>
 <?php
+error_reporting(0);
 include 'connection.php';
-$roomname= $_POST('roomname');
-$eventtype= $_POST('eventtype');
-$floor= $_POST('floor');
-$eventdate= $POST('eventdate');
-$sql= "INSERT into data (roomname, eventtype, floor, eventdate) values ('$roomname','$eventtype','$floor', 'eventdate')";
+$name =$_POST['eventtype'];
+$responsible = $_POST['responsible'];
+$sql = "INSERT into events (eventtype, responsible, datetime) values ('$eventype', '$responsible', 'datetime')";
 
-if ($_POST['submit']){
-	if (mysqli_query($conn,$sql)){
-		echo "Data added successfully";
+	if ($_POST['submit']){
+		if (mysqli_query($con, $sql)){
+			echo "Data added successfully";
+		}
+		else{
+			echo "Something went wrong";
+		}
 	}
-	else{
-		echo "Something went wrong";
-}}
 ?>
+
 </head>
 
 <body>
 
 <form action="Schedule.php" method= "POST">
 
-Classrom Name: <input type = "text" name ="roomname">
-event: <input type= "text" name="eventtype">
-floor: <input type= "text" name="floor">
-data: <input type= "date" name="eventdate">
+Event: <input type= "text" name="eventtype">
+Lecturer/Staff: <input type= "text" name="responsible">
+Data: <input type= "date" name="datetime">
 <input type="submit" name="submit" value="Send Info">
 
 </form>
