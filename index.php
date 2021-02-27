@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -9,6 +10,9 @@ if(!isset($_SESSION['AdminLoginId']))
 ?>
 <html>
 <head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> ACT System</title>
 
 <style>
@@ -19,7 +23,7 @@ body{
 
 #header{
 width: 100%;
-height: 100px;
+height: 150px;
 background: black;
 color: white;
 
@@ -40,7 +44,7 @@ float: left;
 #adminLogo{
 	background: white;
 	border-radius: 20px;
-	height: 50px;
+	height: 20px;
 }
 ul li{
 	padding: 20px;
@@ -60,11 +64,12 @@ ul li:hover{
 
 <div id="header">
 
-<center><img src="logoicon.png" alt="adminLogo" id="adminLogo"><br>
-<h1>This is Admin Panel, Please proceed with caution! - <?php echo $_SESSION['AdminLoginId']?></h1>
-<form method="POST">
+<form align= "right" method="POST">
 <button name= "Logout">LOG OUT</button>
 </form>
+<center><img src="logoicon.png" alt="adminLogo" id="adminLogo"><br>
+<h1>This is Admin Panel, Please proceed with caution! - <?php echo $_SESSION['AdminLoginId']?></h1>
+
 </center>
 
 </div>
@@ -80,18 +85,35 @@ if(isset($_POST['Logout']))
 
 <div id="sidebar">
 <ul>
-<li>Schedule Event </li>
-<li>Delete Event </li>
-<li>Update Event </li>
-<a href="https://www.qr-code-generator.com/" target="_blank"><li> Generate QR Code</li></a>
+<li>Dashboard</li>
+<li><a href="Schedule.php" target= "_blank">Schedule Event</a> </li>
+<li>Faculty Staff </li>
+<li><a href="Room.php" target="_blank">Room </a></li>
+<li><a href="https://www.qr-code-generator.com/" target="_blank"> Generate QR Code</a></li>
 
 </ul>
+
 
 </div>
 
 <div id="data"><br>
-<center><h3> Classroom</h3></center>
-<center><p> This session you can see all the events for the day, week or month.</p></center>
+
+<?php
+error_reporting(0);
+include 'connection.php';
+$sql ="SELECT * FROM rooms";
+$result = mysqli_query($con,$sql);
+
+if (mysqli_num_rows($result) > 0){
+	echo "<h3><center>Data for Classrooms available:</h3>";
+while($row = mysqli_fetch_assoc($resul)){
+	echo "Classroom Name:" . $row["roomname"]. "<br>" . "Floor". $row["floor"];
+}
+}else {
+	echo "<h3><center> No user data found!</center></h3>";
+}
+?>
+
 
 </div>
 
