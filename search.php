@@ -15,14 +15,16 @@ include("AdminLogin.php");
             $result = mysqli_query($conn, $sql);
             $queryResult = mysqli_num_rows($result);
 
+            echo "There are ".$queryResult."_results!"; //tell the user how many results has from their query
+
             if ($queryResult > 0){
                 while ($row = mysqli_fetch_assoc($result)){
-                    echo "<div class='room-box'>
+                    echo "<a href='Room.php?rooms=".$row['roomname']. "&floor=".$row['floor']." ' ><div class='room-box'>
 					<h3>".$row['roomname'] ."</h3>
 					<p>".$row['floor']."</p>
 					<p>".$row['status']."</p>
 					<p>".$row['eventID']."</p>
-				</div>";
+				</div></a>";
                 } 
             }  else {
                 echo "There are no results matching your search!";
