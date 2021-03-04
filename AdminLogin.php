@@ -6,6 +6,7 @@ require("connection.php");
 <html>
 <head>
 <title>Admin Login Panel</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 

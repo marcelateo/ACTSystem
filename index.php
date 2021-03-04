@@ -117,6 +117,32 @@ while($row = mysqli_fetch_assoc($resul)){
 
 </div>
 
+<form action="search.php" method="POST">
+	<input type="text" name="search" placeholder="Search">
+	<button type="submit" name="submit-search">Search</button>	
+</form>
+<h1>Front page</h1>
+<h2>All Rooms</h2>
+
+<div class="room-container">
+	<?php
+		$sql = "SELECT * FROM events";
+		$result = mysqli_query($conn, $sql);
+		$queryResults = mysqli_num_rows($result);
+
+		if ($queryResults > 0) {
+			while ($row = mysqli_fetch_assoc($result)) {
+				echo "<div class='room-box'>
+					<h3>".$row['roomname'] ."</h3>
+					<p>".$row['floor']."</p>
+					<p>".$row['status']."</p>
+					<p>".$row['eventID']."</p>
+				</div>";
+			}
+		}
+	?>
+</div>
+
 
 
 </body>
