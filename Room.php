@@ -1,57 +1,54 @@
-<html>
-
-<head>
-
-<?php
-error_reporting(0);
+<?php 
 include 'connection.php';
-$name =$_POST['roomname'];
-$floor = $_POST['floor'];
-$sql = "INSERT into rooms (roomname, floor) values ('$name', '$floor')";
-
-	if ($_POST['submit']){
-		if (mysqli_query($con, $sql)){
-			echo "Data added successfully";
-		}
-		else{
-			echo "Something went wrong";
-		}
-	}
 ?>
+
+<html>
+<head>
+<title>ROOMS</title>    
+<link rel="stylesheet" type="text/css" href="stylepage.css"> 
+    
 </head>
-
 <body>
-<form action="Room.php" method= "POST">
- Room Name: <input type="text" name="roomname">
- Room floor: <input type="text" name="floor">
-<input type="submit" name= "submit" value="Send Info">
-
-</form>
-
-
-<div class="room-container">
-	<?php
-		$rooms = mysqli_real_escape_string($conn, $_GET['roomname']);
-		$floor = mysqli_real_escape_string($conn, $_GET['floor']);
-
-		$sql = "SELECT * FROM events WHERE roomname='$rooms' AND floor='floor'";
-		$result = mysqli_query($conn, $sql);
-		$queryResults = mysqli_num_rows($result);
-
-		if ($queryResults > 0) {
-			while ($row = mysqli_fetch_assoc($result)) {
-				echo "<div class='room-box'>
-					<h3>".$row['roomname'] ."</h3>
-					<p>".$row['floor']."</p>
-					<p>".$row['status']."</p>
-					<p>".$row['eventID']."</p>
-				</div>";
-			}
-		}
-	?>
-</div>
-
-
+  <table>
+    <thead>
+      <tr>
+        <th>Room Name</th>
+        <th>Floor</th>
+        <th colspan="2">Action</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr>
+        <td>Yale</td>
+        <td>3 Floor</td>
+        <td>
+          <a href="#">Edit</a>
+          </td>
+          <td>
+          <a href="#">Delete</a>
+          </td>
+        </tr>    
+      </tbody>
+    </table>  
+    <form method= "post" action= "#">
+    <div class="input-group">
+        <label>Room Name</label>
+        <input type="text" name="name">
+        </div>
+         <div class="input-group">
+        <label>Floor</label>
+        <input type="text" name="floor">
+        </div>
+         <div class="input-group">
+        <button type= "submit" name= "save" class="btn">Save</button>        
+        </div>
+    </form>
+    
+    <div>
+    <a href="index.php" class="button">Home</a>
+    
+    </div>
+    
 </body>
 
 
