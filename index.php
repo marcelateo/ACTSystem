@@ -1,4 +1,4 @@
-
+<!-- before going to index page request login first -->
 <?php
 session_start();
 
@@ -14,54 +14,31 @@ if(!isset($_SESSION['AdminLoginId']))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> ACT System</title>
+<link rel= "stylesheet" type= "text/css" href= "style.css">
 
 <style>
-body{
- margin: 0px;
- border: 0px/
-}
+<!-- style for three pages when loading on the same page -->
+#Room.php {display:none}
+#Room.php:target {display:block}
 
-#header{
-width: 100%;
-height: 150px;
-background: black;
-color: white;
+#Schedule.php {display:none}
+#Schedule.php:target {display:block}
 
-}
-#sidebar{
-width: 300px;
-height: 400px;
-background: #3498db;
-float: left;
-}
-#data{
-	height: 700px;
-	background: #95a5a6;
-	color: white;
-	font-family:Helvetica;
-	font-size:25px;
-}
-#adminLogo{
-	background: white;
-	border-radius: 20px;
-	height: 20px;
-}
-ul li{
-	padding: 20px;
-	border-bottom: 2px solid grey;
-	
-}
-ul li:hover{
-	background:#7f8c8d;
-	color: white;
-	
-}
+#Staff.php {display:none}
+#Staff.php:target {display:block}
+
+
+document.location.hash = "#Room.php";
+document.location.hash = "Schedule.php";
+document.location.hash = "Staff.php";
 
 </style>
 
+
+
 </head>
 <body>
-
+<!-- header where all the admin profile info is shown -->
 <div id="header">
 
 <form align= "right" method="POST">
@@ -82,65 +59,25 @@ if(isset($_POST['Logout']))
 }
 ?>
 
-
+<!-- this side bar with room,events and faculty buttons linked to their pages -->
 <div id="sidebar">
 <ul>
-<li>Dashboard</li>
-<li><a href="Schedule.php" target= "_blank">Schedule Event</a> </li>
-<li><a href="Staff.php" target= "_blank">Faculty Staff </a> </li>
-<li><a href="Room.php" target="_blank">Room </a></li>
+<li><a href= "#">Dashboard</a></li>
+<li><a href="Schedule.php">Schedule Event</a> </li>
+<li><a href="Staff.php">Faculty Staff</a> </li>
+<li><a href="Room.php">Room </a></li>
 <li><a href="#"> Generate QR Code</a></li>
 
 </ul>
 
 
 </div>
-
+<!-- right center of the admin main page where the important info should appear -->
 <div id="data"><br>
 
-<?php
-error_reporting(0);
-include 'connection.php';
-$sql ="SELECT * FROM rooms";
-$result = mysqli_query($con,$sql);
-
-if (mysqli_num_rows($result) > 0){
-	echo "<h3><center>Data for Classrooms available:</h3>";
-while($row = mysqli_fetch_assoc($resul)){
-	echo "Classroom Name:" . $row["roomname"]. "<br>" . "Floor". $row["floor"];
-}
-}else {
-	echo "<h3><center> No user data found!</center></h3>";
-}
-?>
 
 
-</div>
 
-<form action="search.php" method="POST">
-	<input type="text" name="search" placeholder="Search">
-	<button type="submit" name="submit-search">Search</button>	
-</form>
-<h1>Front page</h1>
-<h2>All Rooms</h2>
-
-<div class="room-container">
-	<?php
-		$sql = "SELECT * FROM events";
-		$result = mysqli_query($conn, $sql);
-		$queryResults = mysqli_num_rows($result);
-
-		if ($queryResults > 0) {
-			while ($row = mysqli_fetch_assoc($result)) {
-				echo "<div class='room-box'>
-					<h3>".$row['roomname'] ."</h3>
-					<p>".$row['floor']."</p>
-					<p>".$row['status']."</p>
-					<p>".$row['eventID']."</p>
-				</div>";
-			}
-		}
-	?>
 </div>
 
 
