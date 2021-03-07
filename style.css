@@ -38,3 +38,11 @@ ul li:hover{
 	color: white;
 	
 }
+#Room.php {display:none}
+#Room.php:target {display:block}
+
+#Schedule.php {display:none}
+#Schedule.php:target {display:block}
+
+#Staff.php {display:none}
+#Staff.php:target {display:block}
