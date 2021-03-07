@@ -16,25 +16,14 @@ if(!isset($_SESSION['AdminLoginId']))
 <title> ACT System</title>
 <link rel= "stylesheet" type= "text/css" href= "style.css">
 
-<style>
 <!-- style for three pages when loading on the same page -->
-#Room.php {display:none}
-#Room.php:target {display:block}
 
-#Schedule.php {display:none}
-#Schedule.php:target {display:block}
-
-#Staff.php {display:none}
-#Staff.php:target {display:block}
-
+<script>
 
 document.location.hash = "#Room.php";
 document.location.hash = "Schedule.php";
 document.location.hash = "Staff.php";
-
-</style>
-
-
+    </script>
 
 </head>
 <body>
