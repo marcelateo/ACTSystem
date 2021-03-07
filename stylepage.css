@@ -50,3 +50,14 @@ form{
 	border:none;
 	border-radius:5px;
 }
+
+{
+#Room.php {display:none}
+#Room.php:target {display:block}
+
+#Schedule.php {display:none}
+#Schedule.php:target {display:block}
+
+#Staff.php {display:none}
+#Staff.php:target {display:block}
+}
