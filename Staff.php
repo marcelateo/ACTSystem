@@ -12,14 +12,16 @@ include 'connection.php';
   <table>
     <thead>
       <tr>
+        <th>Staff ID</th>
         <th>Staff Name</th>
         <th>Phone</th>
         <th>Email</th>
-        <th colspan="3">Action</th>
+        <th colspan="4">Action</th>
         </tr>
       </thead>
     <tbody>
       <tr>
+        <td>2021001</td>
         <td>Greg South</td>
         <td>CCT College</td>
         <td>greg@cct.ie</td>
@@ -33,6 +35,10 @@ include 'connection.php';
       </tbody>
     </table>  
     <form method= "post" action= "#">
+        <div class="input-group">
+        <label>Staff ID</label>
+        <input type="text" name="staffid">
+        </div>
     <div class="input-group">
         <label>Name</label>
         <input type="text" name="name">
