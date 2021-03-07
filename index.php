@@ -18,18 +18,12 @@ if(!isset($_SESSION['AdminLoginId']))
 
 <!-- style for three pages when loading on the same page -->
 
-<script>
-
-document.location.hash = "#Room.php";
-document.location.hash = "Schedule.php";
-document.location.hash = "Staff.php";
-    </script>
 
 </head>
 <body>
 <!-- header where all the admin profile info is shown -->
 <div id="header">
-
+<!-- after click logout the user goes to login page -->
 <form align= "right" method="POST">
 <button name= "Logout">LOG OUT</button>
 </form>
