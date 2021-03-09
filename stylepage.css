@@ -1,14 +1,16 @@
 body {
 	font-size:19px;
+	background: #ebeff0;
 	}
 table{
 	width:50%;
 	margin:30px auto;
 	border-collapse: collapse;
 	text-align:left;
+	background: #a2bbf1;
 }
 tr{
-	border-bottom:1px solid #cbcbcb;
+	border-bottom:1px solid #a2bbf1;
 	}
 th,td{
 	border:none;
@@ -16,7 +18,7 @@ th,td{
 	padding:2px;
 }	
 tr:hoover{
-	backgroung: #F5F5F5;
+	background: #809ff1;
 }
 form{
 	width:45%;
@@ -25,6 +27,7 @@ form{
 	padding:20px;
 	border:1px solid #bbbbbb;
 	border-radius:5px;
+	background: #a2bbf1;
 }
 .input-group{
 	margin:10px 0px 10px 0px;
@@ -38,7 +41,7 @@ form{
 	height:30px;
 	width:93%;
 	padding:5px 10px;
-	font-szie:16px;
+	font-size:16px;
 	border-radius:5px;
 	border:1px solid gray;
 }
@@ -50,8 +53,24 @@ form{
 	border:none;
 	border-radius:5px;
 }
+.edit_btn{
+text-decoration: none;
+padding:2px 5px;
+background: #3b68e4;
+color: white;
+border-radius:3px;
 
-{
+}
+.del_btn{
+text-decoration: none;
+padding:2px 5px;
+background: #af0c0c;
+color: white;
+border-radius:3px;
+}
+
+
+
 #Room.php {display:none}
 #Room.php:target {display:block}
 
@@ -60,4 +79,3 @@ form{
 
 #Staff.php {display:none}
 #Staff.php:target {display:block}
-}
