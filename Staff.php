@@ -1,5 +1,17 @@
-<?php 
-include 'connection.php';
+<?php include ('server1.php');
+
+//fetch the record to be updated
+if (isset($_GET['edit'])){
+	$id= $_GET['edit'];
+	$edit_state= true;
+	$rec = mysqli_query($db, "SELECT * FROM staff WHERE id=$id");
+	$record= mysqli_fetch_array($rec);
+	$staffNumber = $record['staffNumber'];
+	$staffName = $record['staffName'];
+	$email= $record['email'];
+	$id= $record['id'];
+}
+
 ?>
 
 <html>
@@ -12,54 +24,58 @@ include 'connection.php';
   <table>
     <thead>
       <tr>
-        <th>Staff ID</th>
-        <th>Staff Name</th>
-        <th>Phone</th>
+        <th>Staff Number</th>
+        <th>Staff Name</th>        
         <th>Email</th>
-        <th colspan="4">Action</th>
+        <th colspan="3">Action</th>
         </tr>
       </thead>
     <tbody>
-      <tr>
-        <td>2021001</td>
-        <td>Greg South</td>
-        <td>CCT College</td>
-        <td>greg@cct.ie</td>
+	<?php while ($row= mysqli_fetch_array($results)){ ?>
+		 <tr>
+        <td><?php echo $row['staffNumber']; ?></td>
+        <td><?php echo $row['staffName']; ?></td>
+        <td><?php echo $row['email']; ?></td>
         <td>
-          <a href="#">Edit</a>
+          <a class= "edit_btn" href="Staff.php?edit=<?php echo $row['id']; ?>">Edit</a>
           </td>
           <td>
-          <a href="#">Delete</a>
+          <a class= "del_btn" href="server1.php?del=<?php echo $row['id']; ?>">Delete</a>
           </td>
-        </tr>    
+        </tr> 	
+		
+	<?php }?>	
+	      
       </tbody>
     </table>  
-    <form method= "post" action= "#">
+    <form method= "POST" action= "server1.php">
+	<input type="hidden" name="id" value="<?php echo $id; ?>">
         <div class="input-group">
-        <label>Staff ID</label>
-        <input type="text" name="staffid">
+        <label>Staff Number</label>
+        <input type="text" name="staffNumber" value="<?php echo $staffNumber; ?>">
         </div>
     <div class="input-group">
         <label>Name</label>
-        <input type="text" name="name">
-        </div>
-         <div class="input-group">
-        <label>Phone</label>
-        <input type="text" name="phone">
+        <input type="text" name="staffName" value= "<?php echo $staffName; ?>">
         </div>
          <div class="input-group">
         <label>Email</label>
-        <input type="text" name="email">
+        <input type="text" name="email" value="<?php echo $email; ?>">
         </div>
          <div class="input-group">
-        <button type= "submit" name= "save" class="btn">Save</button>        
+		 <?php if ($edit_state == false): ?>
+			<button type= "submit" name= "save" class="btn">Save</button>
+		 <?php else: ?>
+			<button type= "submit" name= "update" class="btn">Update</button>
+		 <?php endif ?>
+                
         </div>
     </form>
-    
-     <div>
+	 <div>
     <a href="index.php" class="button">Home</a>
     
     </div>
+
     
 </body>
 
