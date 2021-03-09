@@ -1,6 +1,4 @@
-<?php 
-include 'connection.php';
-?>
+<?php include ('server2.php'); ?>
 
 <html>
 <head>
@@ -13,49 +11,51 @@ include 'connection.php';
     <thead>
       <tr>
         <th>Events</th>
-        <th>Type</th>
-        <th>Date/Time</th>
-          <th>Room Name</th>
-          <th>Staff Name</th>
+        <th>Course Category</th>
+        <th>Date-(yyyy-mm-dd hh:mm:ss)</th>
+          <th>Room</th>
+          <th>Staff</th>
         <th colspan="5">Action</th>
         </tr>
       </thead>
     <tbody>
-      <tr>
-        <td>Network and Switching</td>
-        <td>Regular Class</td>
-        <td>14/02/2021 15:00:00</td>
-          <td>Yale</td>
-          <td>Greg</td>
+	<?php while ($row = mysqli_fetch_array($results)){ ?>
+		<tr>
+        <td><?php echo $row['event'];?></td>
+        <td><?php echo $row['type'];?></td>
+        <td><?php echo $row['datetime']; ?></td>
+          <td><?php echo $row ['roomID']; ?></td>
+          <td><?php echo $row ['staffID']; ?></td>
         <td>
           <a href="#">Edit</a>
           </td>
           <td>
           <a href="#">Delete</a>
           </td>
-        </tr>    
+        </tr>		
+	<?php }?>         
       </tbody>
     </table>  
-    <form method= "post" action= "#">
+    <form method= "POST" action= "server2.php">
     <div class="input-group">
         <label>Event</label>
         <input type="text" name="event">
         </div>
          <div class="input-group">
         <label>Type</label>
-        <input type="text" name="eventtype">
+        <input type="text" name="type">
         </div>
          <div class="input-group">
         <label>Datetime</label>
-        <input type="text" name="datetime">
+        <input type="datetime-local" name="datetime">
         </div>
         <div class="input-group">
         <label>Room Name</label>
-        <input type="text" name="roomname">
+        <input type="text" name="roomID">
         </div>
         <div class="input-group">
         <label>Staff Name</label>
-        <input type="text" name="staffName">
+        <input type="text" name="staffID">
         </div>
          <div class="input-group">
         <button type= "submit" name= "save" class="btn">Save</button>        
@@ -66,7 +66,7 @@ include 'connection.php';
     <a href="index.php" class="button">Home</a>
     
     </div>
-    
+
 </body>
 
 
