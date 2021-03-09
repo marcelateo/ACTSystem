@@ -10,7 +10,7 @@ require("connection.php");
 </head>
 <body>
 
-<div class="login-form">
+<div align= "center" class="login-form">
 <h2>ADMIN LOGIN PANEL</h2>
 
 <form method="POST">
