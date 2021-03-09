@@ -1,3 +1,4 @@
+
 <!-- before going to index page request login first -->
 <?php
 session_start();
@@ -18,12 +19,11 @@ if(!isset($_SESSION['AdminLoginId']))
 
 <!-- style for three pages when loading on the same page -->
 
-
 </head>
 <body>
 <!-- header where all the admin profile info is shown -->
 <div id="header">
-<!-- after click logout the user goes to login page -->
+
 <form align= "right" method="POST">
 <button name= "Logout">LOG OUT</button>
 </form>
@@ -33,7 +33,7 @@ if(!isset($_SESSION['AdminLoginId']))
 </center>
 
 </div>
-
+<!-- after click logout it direct to login page -->
 <?php
 if(isset($_POST['Logout']))
 {
@@ -59,11 +59,10 @@ if(isset($_POST['Logout']))
 <div id="data"><br>
 
 
-
-
 </div>
-
-
+<div class="footer">
+ <p class="copyright">© ACTSystem 2021</p>
+</div>
 
 </body>
 </html>
