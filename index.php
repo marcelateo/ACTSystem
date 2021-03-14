@@ -49,7 +49,7 @@ if(isset($_POST['Logout']))
 <li><a href="Schedule.php">Schedule Event</a> </li>
 <li><a href="Staff.php">Faculty Staff</a> </li>
 <li><a href="Room.php">Room </a></li>
-<li><a href="#"> Generate QR Code</a></li>
+<li><a href="qrcode.php"> Generate QR Code</a></li>
 
 </ul>
 
