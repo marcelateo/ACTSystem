@@ -6,9 +6,24 @@ require("connection.php");
 <html>
 <head>
 <title>Admin Login Panel</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="loginpage.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
+	<img class="wave" src="img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="img/login-location.svg">
+		</div>
+		<div class="login-container">
+			<form action="AdminLogin.php">
+				<img src="img/profile.svg">
+				<h2> Welcome</h2>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
 
 <div align= "center" class="login-form">
 <h2>ADMIN LOGIN PANEL</h2>
@@ -30,6 +45,7 @@ require("connection.php");
 <a href="#"> Forgot Password?</a>
 </div>
 </form>
+</div>
 </div>
 
 <?php
