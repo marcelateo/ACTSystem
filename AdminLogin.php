@@ -17,7 +17,7 @@ require("connection.php");
 			<img src="img/login-location.svg">
 		</div>
 		<div class="login-container">
-			<form action="AdminLogin.php">
+			<form action="index.php">
 				<img src="img/profile.svg">
 				<h2> Welcome</h2>
 				<div class="input-div one">
