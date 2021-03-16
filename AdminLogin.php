@@ -11,19 +11,19 @@ require("connection.php");
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
-	<img class="wave" src="img/wave.png">
-	<div class="container">
-		<div class="img">
-			<img src="img/login-location.svg">
+<img class="wave" src="img/wave.png">
+<div class="container">
+<div class="img">
+<img src="img/login-location.svg">
+</div>
+<div class="login-content">
+<form action="index.php">
+	<img src="img/profile.svg">
+	<h2> Welcome</h2>
+	<div class="input-div one">
+		<div class="i">
+			<i class="fas fa-user"></i>
 		</div>
-		<div class="login-container">
-			<form action="index.php">
-				<img src="img/profile.svg">
-				<h2> Welcome</h2>
-				<div class="input-div one">
-					<div class="i">
-						<i class="fas fa-user"></i>
-					</div>
 
 <div align= "center" class="login-form">
 <h2>ADMIN LOGIN PANEL</h2>
@@ -32,6 +32,7 @@ require("connection.php");
 <div class="input-field">
 <i class="fas fa-user"></i>
 <input type="text" placeholder="Admin Name" name="AdminName">
+</div>
 </div>
 
 <div class="input-field">
@@ -51,18 +52,18 @@ require("connection.php");
 <?php
 if(isset($_POST['Signin']))
 {
-	$query=" SELECT * FROM `admin_login` WHERE `Admin_Name`= '$_POST[AdminName]' AND `Admin_Password`= '$_POST[AdminPassword]'";
-    $result=mysqli_query($con,$query);
-	if(mysqli_num_rows($result)==1)
-	{
-		
-	session_start();
-		$_SESSION['AdminLoginId']=$_POST['AdminName'];
-		header("location:index.php");
-	} else
-	{
-		echo "<script>alert('Incorrect Password'); </script>";
-	}
+$query=" SELECT * FROM `admin_login` WHERE `Admin_Name`= '$_POST[AdminName]' AND `Admin_Password`= '$_POST[AdminPassword]'";
+$result=mysqli_query($con,$query);
+if(mysqli_num_rows($result)==1)
+{
+
+session_start();
+$_SESSION['AdminLoginId']=$_POST['AdminName'];
+header("location:index.php");
+} else
+{
+echo "<script>alert('Incorrect Password'); </script>";
+}
 }
 ?>
 
