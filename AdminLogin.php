@@ -27,7 +27,7 @@ require("connection.php");
 			<i class="fas fa-user"></i>
 	</div>
 	<div class="input-field">
-		<input type="text" placeholder="Username" name="Username">
+		<input type="text" placeholder="Username" name="AdminName">
 	</div>
 </div>
 <div class="input-div pass">
