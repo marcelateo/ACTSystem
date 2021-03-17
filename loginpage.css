@@ -60,7 +60,7 @@ form{
 	font-size: 2.9rem;
 }
 
-.login-content .input-field{
+.login-content .input-div{
 	position: relative;
     display: grid;
     grid-template-columns: 7% 93%;
@@ -73,7 +73,7 @@ form{
 	margin-top: 0;
 }
 
-.i{
+.i {
 	color: #d9d9d9;
 	display: flex;
 	justify-content: center;
@@ -84,12 +84,12 @@ form{
 	transition: .3s;
 }
 
-.input-field > div{
+.input-div > .input-field{
     position: relative;
 	height: 45px;
 }
 
-.input-field> div > h5{
+.input-div> .input-field > input{
 	position: absolute;
 	left: 10px;
 	top: 50%;
@@ -105,7 +105,7 @@ form{
 	bottom: -2px;
 	width: 0%;
 	height: 2px;
-	background-color: #38d39f;
+	background-color: #6C63FF;
 	transition: .4s;
 }
 
@@ -121,16 +121,16 @@ form{
 	width: 50%;
 }
 
-.input-div.focus > div > h5{
+.input-div.focus > .input-field > input{
 	top: -5px;
 	font-size: 15px;
 }
 
 .input-div.focus > .i > i{
-	color: #38d39f;
+	color: #6C63FF;
 }
 
-.input-div > div > input{
+.input-div > .input-field > input{
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -159,7 +159,7 @@ a{
 }
 
 a:hover{
-	color: #38d39f;
+	color: #6C63FF;
 }
 
 .btn{
