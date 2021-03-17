@@ -25,22 +25,22 @@ require("connection.php");
 			<i class="fas fa-user"></i>
 		</div>
 
-<div align= "center" class="login-form">
-<h2>ADMIN LOGIN PANEL</h2>
-
 <form method="POST">
 <div class="input-field">
 <i class="fas fa-user"></i>
 <input type="text" placeholder="Admin Name" name="AdminName">
 </div>
 </div>
-
+<div class="input-div pass">
+	<div class="i">
+	<i class="fas fa-lock"></i>
+</div>
 <div class="input-field">
-<i class="fas fa-lock"></i>
-<input type="password" placeholder="Password" name="AdminPassword">
+	<input type="password" placeholder="Password" name="AdminPassword">
+</div>
 </div>
 
-<button type="submit" name= "Signin">Sign In</button>
+<button type="submit" class="btn" name= "Signin">Sign In</button>
 
 <div class="extra">
 <a href="#"> Forgot Password?</a>
