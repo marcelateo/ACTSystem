@@ -27,7 +27,7 @@ if(!isset($_SESSION['AdminLoginId']))
 <form align= "right" method="POST">
 <button name= "Logout">LOG OUT</button>
 </form>
-<center><img class="logo-profile" src="images/logoicon.png" alt="adminLogo" id="adminLogo"><br>
+<center><img class="logo-profile" src="img/logoicon.png" alt="adminLogo" id="adminLogo"><br>
 <h1>This is Admin Panel, Please proceed with caution! - <?php echo $_SESSION['AdminLoginId']?></h1>
 
 </center>
