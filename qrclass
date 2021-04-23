@@ -1,0 +1,53 @@
+<?php  
+ class QrCode{  
+   // Google Chart API URL  
+   private $apiUrl = 'http://chart.apis.google.com/chart';  
+   private $data;  
+   // It generates URL type of Qr code  
+   public function URL($url = null){  
+     $this->data = preg_match("#^https?\:\/\/#", $url) ? $url : "http://{$url}";  
+   }  
+   // It Generates the Image type of Qr Code  
+      public function CONTENTIMG($type = null, $size = null, $content = null) {  
+           $this->data = "CNTS:TYPE:{$type};LNG:{$size};BODY:{$content};;";  
+      }
+
+    // get Event Details
+    public function calendar_event($event, $dttime, $roomname,$staffName){
+      $this->data = "\nSTART AT \nEvent Name : {$event}\nDate and Time:{$dttime}\nRoom Name:{$roomname}\nFaculty Staff Name:{$staffName}\n \nThese are the last updates for this room";
+      
+      // header("location: ./qrcode.php");
+
+} 
+   // Saving the Qr code image   
+      public function generateQRCODE($size = 300, $filename = null) {
+        
+          $ch = curl_init();  
+           curl_setopt($ch, CURLOPT_URL, $this->apiUrl);  
+           curl_setopt($ch, CURLOPT_POST, true);  
+           curl_setopt($ch, CURLOPT_POSTFIELDS, "chs={$size}x{$size}&cht=qr&chl=" . urlencode($this->data));  
+           curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
+           curl_setopt($ch, CURLOPT_HEADER, false);  
+           curl_setopt($ch, CURLOPT_TIMEOUT, 30);  
+           $img = curl_exec($ch);  
+           curl_close($ch);  
+           header("Content-type: image/png");  
+           
+           echo $img;
+           die();
+           if($img) {  
+                if($filename) {  
+                     if(!preg_match("#\.png$#i", $filename)) {  
+                          $filename .= ".png";  
+                     }  
+                     return file_put_contents($filename, $img);  
+                } else {  
+                     header("Content-type: image/png");  
+                     print $img;  
+                     return true;  
+                }  
+           }  
+           return false;  
+      }  
+ }  
+ ?>
