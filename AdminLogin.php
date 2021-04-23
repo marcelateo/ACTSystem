@@ -8,7 +8,7 @@ require("connection.php");
 <html>
 <head>
 <title>Admin Login Panel</title>
-<link rel="stylesheet" type="text/css" href="loginpage.css">
+<link rel="stylesheet" type="text/css" href="css/loginpage.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a81368914c.js"></script>
