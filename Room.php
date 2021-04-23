@@ -5,7 +5,7 @@ include 'connection.php';
 <html>
 <head>
 <title>ROOMS</title>    
-<link rel="stylesheet" type="text/css" href="stylepage.css"> 
+<link rel="stylesheet" type="text/css" href="css/stylepage.css"> 
     
 </head>
 <body>
