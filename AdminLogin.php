@@ -3,6 +3,8 @@
 require("connection.php");
 
 ?>
+
+
 <html>
 <head>
 <title>Admin Login Panel</title>
@@ -43,7 +45,6 @@ require("connection.php");
 		</form>
 	</div>
 </div>
-
 <?php
 if(isset($_POST['Signin']))
 {
@@ -61,6 +62,6 @@ echo "<script>alert('Incorrect Password'); </script>";
 }
 }
 ?>
-
 </body>
+
 </html>
