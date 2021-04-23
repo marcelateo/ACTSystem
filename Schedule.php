@@ -5,13 +5,13 @@ if (isset($_GET['edit'])){
 	$id= $_GET['edit'];
 	
 	$edit_state= true;
-	$rec = mysqli_query($db, "SELECT * FROM events WHERE id=$id");
+	$rec = mysqli_query($db,"SELECT * FROM events WHERE id=$id" );
 	$record= mysqli_fetch_array($rec);
 	
 	$event = $record['event'];
 	$type = $record['type'];
 	$datetime= $record['datetime'];
-	$roomID = $record['roomID'];
+	$roomid = $record['roomid'];
 	$staffID= $record['staffID'];
 	$id= $record['id'];
 }
@@ -42,7 +42,7 @@ if (isset($_GET['edit'])){
         <td><?php echo $row['event'];?></td>
         <td><?php echo $row['type'];?></td>
          <td><?php echo $row['datetime']; ?></td> 
-          <td><?php echo $row ['roomID']; ?></td>
+          <td><?php echo $row ['roomid']; ?></td>
           <td><?php echo $row ['staffID']; ?></td>
         <td>
           <a class= "edit_btn" href="Schedule.php?edit=<?php echo $row['id']; ?>">Edit</a>
@@ -70,7 +70,7 @@ if (isset($_GET['edit'])){
         </div>
         <div class="input-group">
         <label>Room Name</label>
-        <input type="text" name="roomID" value= "<?php echo $roomID; ?>">
+        <input type="text" name="roomid" value= "<?php echo $roomid; ?>">
         </div>		
         <div class="input-group">
         <label>Staff Name</label>
