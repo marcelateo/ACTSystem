@@ -1,35 +1,33 @@
 <?php
 
-$staffNumber = "";
 $staffName= "";
 $email= "";
 $id= 0;
 $edit_state = false;
 
 //connect to database
-$db=mysqli_connect("localhost", "root", "", "actsystem");
+$db=mysqli_connect("remotemysql.com", "VC1cXIVdFt", "KQZUN1FPqb", "VC1cXIVdFt");
 
 
 //if save button is clicked it save the data
 if (isset($_POST['save'])){
-$staffNumber = $_POST['staffNumber'];
 $staffName= $_POST['staffName'];
 $email= $_POST['email'];
 
-$query = "INSERT INTO staff (staffNumber, staffName, email) VALUES ('$staffNumber', '$staffName', 'email')";
+$query = "INSERT INTO staff ( staffName, email) VALUES ( '$staffName', 'email')";
  mysqli_query($db, $query);
  header('location: Staff.php');
 
 }
 //update option for edit button
 if (isset($_POST['update'])){
-	$staffNumber = $_POST['staffNumber'];	
+		
 	$staffName= $_POST['staffName'];
 	$email= $_POST['email'];
 	$id=$_POST['id'];
 
 
-	mysqli_query($db, "UPDATE staff SET staffNumber= '$staffNumber', staffName= '$staffName', email= '$email' WHERE id=$id");
+	mysqli_query($db, "UPDATE staff SET staffName= '$staffName', email= '$email' WHERE id=$id");
 	header ('location: Staff.php');
 }
 //delete records
