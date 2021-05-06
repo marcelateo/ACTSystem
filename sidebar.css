@@ -1,0 +1,70 @@
+#sidebar {
+  width: 300px;
+  height: 100%;
+  background: #c4c4c4;
+  border-radius: 0 25px 25px 0;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+#sidebar > img {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#sidebar > ul {
+  list-style-type: none;
+  text-indent: 20px;
+  margin-top: 50px;
+  padding-left: 0;
+}
+
+#sidebar > ul > li {
+  padding: 10px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+#sidebar > ul > li > a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+#sidebar i {
+  padding-right: 15px;
+  color: #000000;
+}
+
+#sidebar li.active,
+#sidebar li:hover {
+  background-color: #ffffff;
+}
+
+#sidebar li.active > a,
+#sidebar li:hover > a {
+  color: #000000;
+}
+
+#sidebar > div.settings {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: #979393;
+  margin-top: 250px;
+  margin-left: 50px;
+  text-indent: 55px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+#sidebar > div.settings > i {
+  font-size: 2.5em;
+  padding-left: 10px;
+}
+
+#sidebar > div.settings > p:first-child {
+  padding-top: 30px;
+}
