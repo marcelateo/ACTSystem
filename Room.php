@@ -18,7 +18,7 @@ if (isset($_GET['edit'])) {
 
 <head>
   <title>ROOMS</title>
-  <link rel="stylesheet" type="text/css" href="/css/stylepage.css">
+  <link rel="stylesheet" type="text/css" href="css/stylepage.css">
 
 </head>
 
