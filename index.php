@@ -28,12 +28,19 @@ if (!isset($_SESSION['AdminLoginId'])) {
   <!-- header where all the admin profile info is shown -->
 
   <!-- after click logout it direct to login page -->
-  <?php
-  if (isset($_POST['Logout'])) {
-    session_destroy();
-    header("location: AdminLogin.php");
-  }
-  ?>
+  
+  <!-- logout -->
+<form align= "right" method="POST">
+<button name= "Logout">LOG OUT</button>
+</form>
+<!-- after click logout it direct to login page -->
+<?php
+if(isset($_POST['Logout']))
+{
+	session_destroy();
+	header("location: AdminLogin.php");
+}
+?>
 
   <!-- this side bar with room,events and faculty buttons linked to their pages -->
   <?php include "sidebar.php"; ?>
