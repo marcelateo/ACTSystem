@@ -1,6 +1,6 @@
 <?php
 $page = 2;
-include('header.php"');
+include('header.php');
 include('server2.php');
 
 //get is used to get the data from database and allow to be updated
@@ -18,6 +18,7 @@ if (isset($_GET['edit'])) {
   $staffID = $record['staffID'];
   $id = $record['id'];
 }
+
 
 ?>
 
