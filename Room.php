@@ -1,18 +1,24 @@
 <?php
+//connect to server.php file to perform get and post methods
 include 'server.php';
-$page = 4;
 include "header.php";
-//edit query
-$edit_state = true;
-if (isset($_GET['edit'])) {
+$page = 4;
 
-  $editquery = "Select * from rooms where id =" . $_GET['edit'] . "";
-
-  $editdata = mysqli_query($con, $editquery);
-
-  $r = mysqli_fetch_array($editdata);
+//get is used to get the data from database and allow to be updated
+if (isset($_GET['edit'])){
+	$id= $_GET['edit'];
+	$edit_state= true;
+	$rec = mysqli_query($db, "SELECT * FROM rooms WHERE id=$id");
+	$record= mysqli_fetch_array($rec);
+	$roomname = $record['roomname'];
+	$floor = $record['floor'];
+	$type= $record['type'];
+	$id= $record['id'];
 }
+
 ?>
+
+
 
 <html>
 
