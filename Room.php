@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include 'server.php';
 $page = 4;
 include "header.php";
 //edit query
