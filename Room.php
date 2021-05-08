@@ -1,6 +1,7 @@
 <?php
 //connect to server.php file to perform get and post methods
 include 'server.php';
+include 'header.php';
 $page = 4;
 
 //get is used to get the data from database and allow to be updated
