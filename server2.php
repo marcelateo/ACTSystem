@@ -2,7 +2,7 @@
 //initialize variables
 $event = "";
 $type= "";
-$datetime= "";
+$datetime= 0;
 $roomid= "";
 $staffID = "";
 $id= 0;
@@ -15,7 +15,7 @@ $db=mysqli_connect("remotemysql.com", "VC1cXIVdFt", "KQZUN1FPqb", "VC1cXIVdFt");
 if (isset($_POST['save'])){
 $event = $_POST['event'];
 $type= $_POST['type'];
-$datetime= $_POST['datetime'];
+$datetime= date('Y-m-d H:i:s', strtotime($_POST['datetime']));
 $roomid= $_POST['roomid'];
 $staffID= $_POST['staffID'];
 
