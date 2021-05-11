@@ -8,6 +8,14 @@ session_start();
 if (!isset($_SESSION['AdminLoginId'])) {
   header("location: AdminLogin.php");
 }
+$query = "SELECT * from events";
+$data = mysqli_query($con, $query);
+
+$query4 = "SELECT * from staff";
+$data4 = mysqli_query($con, $query4);
+
+$query6 = "SELECT * from rooms";
+$data6 = mysqli_query($con, $query6);
 
 ?>
 <html>
@@ -51,29 +59,47 @@ if(isset($_POST['Logout']))
       <table class="classrooms">
         <thead>
           <tr>
-            <th scope="col">Course/Year</th>
+            <th scope="col">Event</th>
             <th scope="col">Date and Time</th>
-            <th scope="col">Assessment Title</th>
+            <th scope="col">Type</th>
             <th scope="col">Lecturer</th>
             <th scope="col">Room</th>
             <th scope="col">Floor</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>    <?php while ($row = mysqli_fetch_array($data)) {
+            $query2 = "SELECT staffName from staff WHERE id=$row[5]";
+            $data2 = mysqli_query($con, $query2);
+            $row2 = mysqli_fetch_array($data2);
+            $lecturerName = $row2[0];
+            $query3 = "SELECT roomname, floor from rooms WHERE id=$row[4]";
+            $data3 = mysqli_query($con, $query3);
+            $row3 = mysqli_fetch_array($data3);
+            $roomName = $row3[0];
+            $floor = $row3[1];
+          ?>
+            <tr>
+              <td><?= $row[1] ?></td>
+              <td><?= $row[3] ?></td>
+              <td><?= $row[2] ?></td>
+              <td><?= $lecturerName ?></td>
+              <td><?= $roomName ?></td>
+              <td><?= $floor ?></td>
+            </tr>
+          <?php } ?></tbody>
       </table>
     </div>
     <br>
     <br>
     <h2>Lecture Rooms</h2>
     <div class="lecture-rooms-container">
-      <div class="lecture-room-1">
-        <p><strong>Room: Wilde</strong></p>
-        <p>Lecture: name</p>
-        <p>Email: staff@cct.ie</p>
-        <p>Date/Time: Friday 12:00 - 14:30</p>
-      </div>
-      <div class="lecture-room-2"></div>
-      <div class="lecture-room-3"></div>
+    <?php while ($row = mysqli_fetch_array($data6)) { ?>
+        <div class="lecture-room">
+          <p><strong>Room: <?= $row[1] ?></strong></p>
+          <p>Type: <?= $row[3] ?></p>
+          <p>Floor: <?= $row[2] ?></p>
+        </div>
+      <?php } ?>
     </div>
     <br>
     <br>
@@ -83,11 +109,24 @@ if(isset($_POST['Logout']))
         <thead>
           <tr>
             <th scope="col">Name</th>
-            <th scope="col">Date and Time</th>
+            <th scope="col">Email</th>
             <th scope="col">Room</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          <?php while ($row = mysqli_fetch_array($data4)) {
+            $query5 = "SELECT roomname from rooms WHERE id=$row[3]";
+            $data5 = mysqli_query($con, $query5);
+            $row5 = mysqli_fetch_array($data5);
+            $roomName = $row5[0];
+          ?>
+            <tr>
+              <td><?= $row[1] ?></td>
+              <td><?= $row[2] ?></td>
+              <td><?= $roomName ?></td>
+            </tr>
+          <?php } ?>
+        </tbody>
       </table>
     </div>
   </div>
