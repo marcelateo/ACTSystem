@@ -72,7 +72,11 @@ if(isset($_GET['edit'])){
 	 </div>
 	 <div class="input-group">
 		<label>Type</label>
-		<input type="text" name= "type" value= "<?php echo $type; ?>">
+		 <select name="type">
+            <option value="hall">Hall</option>
+            <option value="classroom">Class Room</option>
+            <option value="auditorium">Auditorium</option>
+          </select>
 	 </div>
 	 <div class="input-group">
 	 <?php if ($edit_state == false): ?>
