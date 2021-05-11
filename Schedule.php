@@ -120,10 +120,7 @@ if (isset($_GET['edit'])) {
       </div>
     </form>
 
-    <div>
-      <a href="index.php" class="button">Home</a>
-
-    </div>
+ 
   </div>
   <?php include "footer.php"; ?>
 </body>
