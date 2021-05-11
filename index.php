@@ -3,6 +3,7 @@
 <?php
 $page = 1;
 include "header.php";
+include 'connection.php';
 session_start();
 
 if (!isset($_SESSION['AdminLoginId'])) {
@@ -33,9 +34,13 @@ $data6 = mysqli_query($con, $query6);
 </head>
 
 <body>
-  <!-- header where all the admin profile info is shown -->
+   <!-- header where all the admin profile info is shown -->
 
   <!-- after click logout it direct to login page -->
+
+  <!-- this side bar with room,events and faculty buttons linked to their pages -->
+ 
+  <!-- right center of the admin main page where the important info should appear -->
   
   <!-- logout -->
 <form align= "right" method="POST">
