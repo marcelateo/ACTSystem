@@ -1,81 +1,91 @@
 body {
-	font-size:19px;
-	background: #ebeff0;
-	}
-table{
-	width:50%;
-	margin:30px auto;
-	border-collapse: collapse;
-	text-align:left;
-	background: #a2bbf1;
+  font-size: 19px;
 }
-tr{
-	border-bottom:1px solid #a2bbf1;
-	}
-th,td{
-	border:none;
-	height:30px;
-	padding:2px;
-}	
-tr:hoover{
-	background: #809ff1;
+table {
+  width: 50%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  text-align: left;
+  background: #c4c4c4;
 }
-form{
-	width:45%;
-	margin:50px auto;
-	text-align:left;
-	padding:20px;
-	border:1px solid #bbbbbb;
-	border-radius:5px;
-	background: #a2bbf1;
+tr {
+  border-bottom: 1px solid #c4c4c4;
 }
-.input-group{
-	margin:10px 0px 10px 0px;
+th,
+td {
+  border: none;
+  height: 30px;
+  padding: 2px;
+}
+tr:hover {
+  background: #979393;
+}
+form {
+  width: 45%;
+  margin: 50px auto;
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+  background: #c4c4c4;
+}
+.input-group {
+  margin: 10px 0px 10px 0px;
 }
 .input-group label {
-	display:block;
-	text-align:left;
-	margin:3px;
+  display: block;
+  text-align: left;
+  margin: 3px;
 }
-.input-group input , .input-group select{
-	height:30px;
-	width:93%;
-	padding:5px 10px;
-	font-size:16px;
-	border-radius:5px;
-	border:1px solid gray;
+.input-group input,
+.input-group select {
+  height: 30px;
+  width: 93%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
 }
-.btn{
-	padding:10px;
-	font-size:15px;
-	color:white;
-	background:#5F9EA0;
-	border:none;
-	border-radius:5px;
+.btn {
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+  background: #5f9ea0;
+  border: none;
+  border-radius: 5px;
 }
-.edit_btn{
-text-decoration: none;
-padding:2px 5px;
-background: #3b68e4;
-color: white;
-border-radius:3px;
-
+.edit_btn {
+  text-decoration: none;
+  padding: 2px 5px;
+  background: #3b68e4;
+  color: white;
+  border-radius: 3px;
 }
-.del_btn{
-text-decoration: none;
-padding:2px 5px;
-background: #af0c0c;
-color: white;
-border-radius:3px;
+.del_btn {
+  text-decoration: none;
+  padding: 2px 5px;
+  background: #af0c0c;
+  color: white;
+  border-radius: 3px;
 }
 
+#Room.php {
+  display: none;
+}
+#Room.php:target {
+  display: block;
+}
 
+#Schedule.php {
+  display: none;
+}
+#Schedule.php:target {
+  display: block;
+}
 
-#Room.php {display:none}
-#Room.php:target {display:block}
-
-#Schedule.php {display:none}
-#Schedule.php:target {display:block}
-
-#Staff.php {display:none}
-#Staff.php:target {display:block}
+#Staff.php {
+  display: none;
+}
+#Staff.php:target {
+  display: block;
+}
