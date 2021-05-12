@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-{
+*{
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -105,7 +105,7 @@ form{
 	bottom: -2px;
 	width: 0%;
 	height: 2px;
-	background-color: #6C63FF;
+	background-color: #0A0A0A;
 	transition: .4s;
 }
 
@@ -127,7 +127,7 @@ form{
 }
 
 .input-div.focus > .i > i{
-	color: #6C63FF;
+	color: #0A0A0A;
 }
 
 .input-div > .input-field > input{
@@ -159,7 +159,7 @@ a{
 }
 
 a:hover{
-	color: #6C63FF;
+	color: #0A0A0A;
 }
 
 .btn{
@@ -169,7 +169,7 @@ a:hover{
 	border-radius: 25px;
 	outline: none;
 	border: none;
-	background-image: linear-gradient(to right, #6C63FF, #7770fa, #6C63FF);
+	background-image: linear-gradient(to right, #0A0A0A, #252424, #0A0A0A);
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;
