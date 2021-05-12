@@ -120,12 +120,12 @@ if(isset($_POST['Logout']))
             $query5 = "SELECT roomname from rooms WHERE id=$row[3]";
             $data5 = mysqli_query($con, $query5);
             $row5 = mysqli_fetch_array($data5);
-            $roomName = $row5[0];
+            $roomname = $row5[0];
           ?>
             <tr>
               <td><?= $row[1] ?></td>
               <td><?= $row[2] ?></td>
-              <td><?= $roomName ?></td>
+              <td><?= $roomname ?></td>
             </tr>
           <?php } ?>
         </tbody>
