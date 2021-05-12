@@ -1,14 +1,14 @@
-
 <!-- before going to index page request login first -->
 <?php
+include 'connection.php';
 $page = 1;
 include "header.php";
-include 'connection.php';
 session_start();
 
 if (!isset($_SESSION['AdminLoginId'])) {
   header("location: AdminLogin.php");
 }
+
 $query = "SELECT * from events";
 $data = mysqli_query($con, $query);
 
@@ -17,6 +17,7 @@ $data4 = mysqli_query($con, $query4);
 
 $query6 = "SELECT * from rooms";
 $data6 = mysqli_query($con, $query6);
+
 
 ?>
 <html>
@@ -27,39 +28,22 @@ $data6 = mysqli_query($con, $query6);
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> ACT System</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 
   <!-- style for three pages when loading on the same page -->
 
 </head>
 
 <body>
-   <!-- header where all the admin profile info is shown -->
+  <!-- header where all the admin profile info is shown -->
 
   <!-- after click logout it direct to login page -->
-
-  <!-- this side bar with room,events and faculty buttons linked to their pages -->
- 
-  <!-- right center of the admin main page where the important info should appear -->
-  
-  <!-- logout -->
-<form align= "right" method="POST">
-<button name= "Logout">LOG OUT</button>
-</form>
-<!-- after click logout it direct to login page -->
-<?php
-if(isset($_POST['Logout']))
-{
-	session_destroy();
-	header("location: AdminLogin.php");
-}
-?>
 
   <!-- this side bar with room,events and faculty buttons linked to their pages -->
   <?php include "sidebar.php"; ?>
   <!-- right center of the admin main page where the important info should appear -->
   <div id="data">
-    <h2>Classrooms Overview</h2>
+    <h2>Events Overview</h2>
     <div class="classrooms-container">
       <table class="classrooms">
         <thead>
@@ -72,7 +56,8 @@ if(isset($_POST['Logout']))
             <th scope="col">Floor</th>
           </tr>
         </thead>
-        <tbody>    <?php while ($row = mysqli_fetch_array($data)) {
+        <tbody>
+          <?php while ($row = mysqli_fetch_array($data)) {
             $query2 = "SELECT staffName from staff WHERE id=$row[5]";
             $data2 = mysqli_query($con, $query2);
             $row2 = mysqli_fetch_array($data2);
@@ -91,14 +76,15 @@ if(isset($_POST['Logout']))
               <td><?= $roomName ?></td>
               <td><?= $floor ?></td>
             </tr>
-          <?php } ?></tbody>
+          <?php } ?>
+        </tbody>
       </table>
     </div>
     <br>
     <br>
     <h2>Lecture Rooms</h2>
     <div class="lecture-rooms-container">
-    <?php while ($row = mysqli_fetch_array($data6)) { ?>
+      <?php while ($row = mysqli_fetch_array($data6)) { ?>
         <div class="lecture-room">
           <p><strong>Room: <?= $row[1] ?></strong></p>
           <p>Type: <?= $row[3] ?></p>
