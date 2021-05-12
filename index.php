@@ -1,6 +1,7 @@
 <!-- before going to index page request login first -->
 <?php
-include 'connection.php';
+include "connection.php";
+include "sidebar.php";
 $page = 1;
 include "header.php";
 session_start();
@@ -29,6 +30,8 @@ $data6 = mysqli_query($con, $query6);
   <title> ACT System</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+  
 
   <!-- style for three pages when loading on the same page -->
 
@@ -38,9 +41,19 @@ $data6 = mysqli_query($con, $query6);
   <!-- header where all the admin profile info is shown -->
 
   <!-- after click logout it direct to login page -->
-
-  <!-- this side bar with room,events and faculty buttons linked to their pages -->
-  <?php include "sidebar.php"; ?>
+       <!-- logout -->
+<form align= "right" method="POST">
+<button name= "Logout">LOG OUT</button>
+</form>
+<!-- after click logout it direct to login page -->
+<?php
+if(isset($_POST['Logout']))
+{
+	session_destroy();
+	header("location: AdminLogin.php");
+}
+?>
+    <!-- this side bar with room,events and faculty buttons linked to their pages -->
   <!-- right center of the admin main page where the important info should appear -->
   <div id="data">
     <h2>Events Overview</h2>
