@@ -41,7 +41,7 @@ require("connection.php");
 				</div>
 			</div>
 			<a href="#"> Forgot Password?</a>
-			<button type="submit" class="btn" name= "Signin">Sign In</button>
+			<button type="submit" class="btn" name= "Signin">Log In</button>
 		</form>
 	</div>
 </div>
