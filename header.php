@@ -2,13 +2,18 @@
 <link rel="stylesheet" href="css/header.css">
 <div id="header">
 
-    <!-- <form align="right" method="POST">
-      <button name="Logout">LOG OUT</button>
-    </form>
-    <center><img class="logo-profile" src="images/logoicon.png" alt="adminLogo" id="adminLogo"><br>
-      <h1>This is Admin Panel, Please proceed with caution! - </h1>
-
-    </center> -->
+     <!-- logout -->
+<form align= "right" method="POST">
+<button name= "Logout">LOG OUT</button>
+</form>
+<!-- after click logout it direct to login page -->
+<?php
+if(isset($_POST['Logout']))
+{
+	session_destroy();
+	header("location: AdminLogin.php");
+}
+?>
 
     <div class="place-left">
         <i class="fas fa-search"></i>
