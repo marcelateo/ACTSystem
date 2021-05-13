@@ -16,7 +16,7 @@
     public function calendar_event($event, $dttime, $roomname,$staffName){
       $this->data = "\nSTART AT \nEvent Name : {$event}\nDate and Time:{$dttime}\nRoom Name:{$roomname}\nFaculty Staff Name:{$staffName}\n \nThese are the last updates for this room";
       
-      // header("location: ./qrcode.php");
+      // header("location: qrcode.php");
 
 } 
    // Saving the Qr code image   
