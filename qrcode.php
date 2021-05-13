@@ -17,7 +17,7 @@ $result1= mysqli_query($db, $query);
 <body style="margin: 0; border: 0">
     <?php include "sidebar.php"; ?>
     <div style="height: 700px; font-family: Helvetica; margin-left: 350px;">
-        <form method="post" action="./qrresult.php">
+        <form method="post" action="qrresult.php">
             <center>
                 <label>Please select a room to create a UNIQUE QR Code: </label>
                 <select name="roomName">
@@ -29,7 +29,7 @@ $result1= mysqli_query($db, $query);
                 <button type="submit" name="generate"> Generate QR Code</button>
             </center>
         </form>
-        <img src="./qrresult.php" height="500" width="500" />
+        <img src="qrresult.php" height="500" width="500" />
     </div>
     <?php include "footer.php"; ?>
 </body>
