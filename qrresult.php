@@ -25,5 +25,5 @@ if(isset($_POST['generate'])){
 ?>
 
 <script>
-	window.location.href="./qrcode.php"
+	window.location.href="qrcode.php"
 </script>
