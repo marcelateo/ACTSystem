@@ -1,4 +1,5 @@
 <?php
+ include 'header.php';
 //connect to database
 $db=mysqli_connect("remotemysql.com", "VC1cXIVdFt", "KQZUN1FPqb", "VC1cXIVdFt");
 $query= "SELECT * FROM rooms";
@@ -8,6 +9,8 @@ $result1= mysqli_query($db, $query);
 
 <html>
 <head>
+     <link rel="stylesheet" type="text/css" href="css/stylepage.css">
+ 
 <title>QR Code </title>
 </head>
 
@@ -31,9 +34,5 @@ $result1= mysqli_query($db, $query);
     <?php include "footer.php"; ?>
 </body>
 
-<?php
-//https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=VALUE_GOES_HERE&choe=UTF-8
-
-?>
 
 </html>
